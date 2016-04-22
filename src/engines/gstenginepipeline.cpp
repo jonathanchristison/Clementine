@@ -992,6 +992,7 @@ void GstEnginePipeline::SourceSetupCallback(GstURIDecodeBin* bin,
                              QCoreApplication::applicationVersion());
     g_object_set(element, "user-agent", user_agent.toUtf8().constData(),
                  nullptr);
+    g_object_set(element, "ssl-strict", FALSE, nullptr);
 
 #ifdef Q_OS_DARWIN
     g_object_set(element, "tls-database", instance->engine_->tls_database(),
